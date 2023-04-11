@@ -19,20 +19,20 @@ class square():
         return self.__height
 
     @width.setter
-    def width(self, w):
+    def width(self, val):
         ''' setter for width '''
-        if w < 1:
+        if val < 1:
             raise ValueError('Width can not be less than 1')
         else:
-            self.__width = w
+            self.__width = val
 
     @height.setter
-    def height(self, h):
+    def height(self, val):
         ''' setter for height '''
-        if h < 1:
+        if val < 1:
             raise ValueError('Height can not be less than 1')
         else:
-            self.__height = h
+            self.__height = val
 
     '''
     def __init__(self, *args, **kwargs):
