@@ -3,14 +3,42 @@
 class square():
     ''' class that defines a square '''
     
-    width = 0
-    height = 0
+    def __init__(self, width=0, height=0):
+        ''' init method '''
+        self.width = width
+        self.height = height
 
+    @property
+    def width(self):
+        ''' getter for width '''
+        return  self.__width
     
+    @property
+    def height(self):
+        ''' getter for height '''
+        return self.__height
+
+    @width.setter
+    def width(self, w):
+        ''' setter for width '''
+        if w < 1:
+            raise ValueError('Width can not be less than 1')
+        else:
+            self.__width = w
+
+    @height.setter
+    def height(self, h):
+        ''' setter for height '''
+        if h < 1:
+            raise ValueError('Height can not be less than 1')
+        else:
+            self.__height = h
+
+    '''
     def __init__(self, *args, **kwargs):
         for key, value in kwargs.items():
             setattr(self, key, value)
-
+    '''
     def area_of_my_square(self):
         """ Area of the square """
         return self.width * self.height
