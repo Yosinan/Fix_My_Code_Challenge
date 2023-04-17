@@ -1,7 +1,8 @@
 #!/usr/bin/python3
-""" 
-User class after debugging 
 """
+User class after debugging
+"""
+
 
 class User():
     """ Documentation """
@@ -14,14 +15,15 @@ class User():
     def email(self):
         ''' getter '''
         return self.__email
+
     @email.setter
     def email(self, value):
         """ setter for the email"""
-        if type(value) is not str:
+        if not isinstance(value, str):
             raise TypeError("email must be a string")
         self.__email = value
-   
-    
+
+
 if __name__ == "__main__":
 
     u = User()

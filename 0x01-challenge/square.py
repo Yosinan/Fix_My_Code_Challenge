@@ -1,8 +1,13 @@
 #!/usr/bin/python3
-''' Square Module '''
+'''
+Square Module
+
+'''
+
+
 class Square():
     ''' class that defines a square '''
-    
+
     def __init__(self, width=0, height=0):
         ''' init method '''
         self.width = width
@@ -11,8 +16,8 @@ class Square():
     @property
     def width(self):
         ''' getter for width '''
-        return  self.__width
-    
+        return self.__width
+
     @property
     def height(self):
         ''' getter for height '''
@@ -39,6 +44,7 @@ class Square():
         for key, value in kwargs.items():
             setattr(self, key, value)
     '''
+
     def area_of_my_square(self):
         """ Area of the square """
         return self.width * self.width
@@ -50,6 +56,7 @@ class Square():
     def __str__(self):
         ''' str rep of the square '''
         return "{}/{}".format(self.width, self.height)
+
 
 if __name__ == "__main__":
 
