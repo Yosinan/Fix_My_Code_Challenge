@@ -8,14 +8,14 @@ class AllPostActions {
         var AllPostStore = require('../stores/AllPostStore');
         var state = AllPostStore.getState();
         if(!!state.postsByPage[pageNum]) {
-            this.actions.updatePsots(state.postsByPage[pageNum], pageNum);
+            this.actions.updatePosts(state.postsByPage[pageNum], pageNum);
         } else {
             var self = this;
 
             pageNum = pageNum -1;
 
             var end = (pageNum * config.itemsPerPage) + config.itemsPerPage;
-            var start = ((pageNum % 2) * config.itemsPerPage);
+            var start = (pageNum * config.itemsPerPage);
 
             if(typeof NProgress != 'undefined') {
                 NProgress.start();
@@ -55,7 +55,7 @@ class AllPostActions {
         var state = AllPostStore.getState();
         if(state.numberOfPosts == 0) {
             request.get(config.baseUrl+'/ajax/getNumberOfPosts',function(err,response) {
-                self.actions.update_numberOfPosts(response.body.numberOfPosts);
+                self.actions.updateNumberOfPosts(response.body.numberOfPosts);
             });
         } else {
             this.actions.update_numberOfPosts(state.numberOfPosts);
