@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-square module contains - square class
+square module 
 """
 
 
