@@ -15,7 +15,7 @@ class Square():
         """ init method """
         for key, value in kwargs.items():
             setattr(self, key, value)
-
+    """
     @property
     def width(self):
         ''' getter for width '''
@@ -41,13 +41,7 @@ class Square():
             raise ValueError('Height can not be less than 1')
         else:
             self.__height = val
-
-    '''
-    def __init__(self, *args, **kwargs):
-        for key, value in kwargs.items():
-            setattr(self, key, value)
-    '''
-
+    """
     def area_of_my_square(self):
         """ Area of the square """
         return (self.width * self.height)
